@@ -1,0 +1,88 @@
+
+
+<!DOCTYPE HTML>
+<html>
+
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<!-- Add cdn to chart.js library files. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+
+<head></head>
+
+
+<body>
+  <div id="chartContainer" style="height: 360px; width: 100%;"></div>
+  <script>
+	var myData = [
+	  {
+	    "date": "15-12-2012",
+	    "rank": 1896594,
+	    "sites-linking": 50
+	  },
+	  {
+	    "date": "17-12-2012",
+	    "rank": 1895639,
+	    "sites-linking": 50
+	  },
+	  {
+	    "date": "09-02-2013",
+	    "rank": 413592,
+	    "sites-linking": 47
+	  },
+	  {
+	    "date": "12-02-2013",
+	    "rank": 327643,
+	    "sites-linking": 55
+	  },
+	  {
+	    "date": "14-02-2013",
+	    "rank": 313141,
+	    "sites-linking": 55
+	  },
+	  {
+	    "date": "15-02-2013",
+	    "rank": 292197,
+	    "sites-linking": 55
+	  },
+	  {
+	    "date": "25-02-2013",
+	    "rank": 242294,
+	    "sites-linking": 88
+	  },
+	  {
+	    "date": "26-02-2013",
+	    "rank": 234704,
+	    "sites-linking": 88
+	  },
+	  {
+	    "date": "02-03-2013",
+	    "rank": 213869,
+	    "sites-linking": 100
+	  }
+	  ],
+
+		Array.prototype.mapProperty = function(property) {
+			return this.map(function (obj) {
+				return obj[property];
+			});
+		};
+
+
+		lineChartData = {
+		    labels : myData.mapProperty('date'),
+		    datasets : [
+		      {
+		      fillColor : "rgba(220,220,220,0.5)",
+		      strokeColor : "rgba(220,220,220,1)",
+		      pointColor : "rgba(220,220,220,1)",
+		      pointStrokeColor : "#fff",
+		      data : myData.mapProperty('rank')
+		      }
+		    ]
+		  };
+  </script>
+
+
+</body>
+
+</html>
