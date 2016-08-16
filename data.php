@@ -6,12 +6,12 @@ $aoRequest = array();
 ini_set("soap.wsdl_cache_enabled", 0);
 
 $dtTimeRequestUpp 	= time();
-$dtTimeRequestLow 	= strtotime('-1 week', $dtTimeRequestUpp );
+$dtTimeRequestLow 	= strtotime('-1 month', $dtTimeRequestUpp );
 $node				= (isset($_GET['node']))?$_GET['node']:0;
 $unit				= (isset($_GET['unit']))?$_GET['unit']:0;
 
 
-function getHours($lower,$upper,$step='86400',$format = '') {
+function getHours($lower,$upper,$step='3600',$format = '') {
   $times = array();
 
   foreach (range($lower, $upper, $step) as $tStamp) {
