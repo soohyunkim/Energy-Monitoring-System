@@ -1,11 +1,14 @@
-@import url(https://fonts.googleapis.com/css?family=Lato);
+@font-face {
+font-family: 'NexusSansPro';
+src: url(/NexusSansPro.otf);
+}
 
 .textbox1{
   padding-left: 30px;
   margin-left: 0%;
   margin-top: 325px;
   float:left;
-  font-family: 'Lato', sans-serif;
+  font-family: 'NexusSansPro', sans-serif;
   font-size: 30px;
   text-align:center
 }
@@ -13,7 +16,7 @@
 .textbox2{
   margin-left: 80%;
   margin-top: 325px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'NexusSansPro', sans-serif;
   font-size: 30px;
   text-align:center
 }
@@ -128,6 +131,7 @@
   float: left;
   top: 14px;
   text-align:center;
+  font-family: 'NexusSansPro', sans-serif;
 }
 
 

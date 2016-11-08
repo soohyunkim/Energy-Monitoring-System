@@ -1,5 +1,5 @@
 <?php
-//Reauest array
+//Request array
 $aoRequest = array();
 
 // Disable the WSDL-Cache for testing.

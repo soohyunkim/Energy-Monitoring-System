@@ -36,6 +36,8 @@ p {
 
 #ELTdata {
 	font-size: 18px;
+	padding: 7px 12px;
+
 }
 
 button {
@@ -89,7 +91,7 @@ input[type=checkbox] {
 	background: #fff;
 	background: linear-gradient(#f6f6f6 0, #fff 50px);
 	background: -o-linear-gradient(#f6f6f6 0, #fff 50px);
-	background: -ms-linear-gradient(#f6f6f6 0, #fff 50px);
+	background: -ms-xinear-gradient(#f6f6f6 0, #fff 50px);
 	background: -moz-linear-gradient(#f6f6f6 0, #fff 50px);
 	background: -webkit-linear-gradient(#f6f6f6 0, #fff 50px);
 	box-shadow: 0 3px 10px rgba(0,0,0,0.15);
@@ -104,7 +106,7 @@ input[type=checkbox] {
 	box-sizing: border-box;
 	width: 850px;
 	height: 260px;
-	padding: 20px 15px 15px 15px;
+	padding: 15px 15px 15px 15px;
 	margin: 15px auto 15px auto;
 	border: 1px solid #ddd;
 	background: #fff;
@@ -129,4 +131,32 @@ input[type=checkbox] {
 
 .legend table {
 	border-spacing: 5px;
+}
+
+
+.modal-content {
+	padding: 15px 15px 15px 15px;
+	border: 1px solid #ddd;
+	width: 850px;
+	height: 260px;
+	position: absolute;
+	margin: 0% -92% auto;
+}
+
+.modal-footer {
+	padding: 30px 15px;
+}
+
+#myModal {
+	width: 850px;
+	height: 350px;
+	position: absolute;
+	margin: 15px auto 30px auto;
+}
+
+.container {
+	padding-right: 15px;
+	padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
 }
