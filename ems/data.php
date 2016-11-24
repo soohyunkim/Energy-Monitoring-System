@@ -6,7 +6,7 @@ $aoRequest = array();
 ini_set("soap.wsdl_cache_enabled", 0);
 
 $dtTimeRequestUpp 	= time();
-$dtTimeRequestLow 	= strtotime('-1 month', $dtTimeRequestUpp );
+$dtTimeRequestLow 	= strtotime('-2 month', $dtTimeRequestUpp );
 $node				= (isset($_GET['node']))?$_GET['node']:0;
 $unit				= (isset($_GET['unit']))?$_GET['unit']:0;
 
@@ -51,8 +51,8 @@ $sWsdlUri = 'https://www.dezem.de/services/dataloader/soap/1/';
 $oClient = new SoapClient($sWsdlUri, array(
     'trace' => TRUE,
     'soap_version' => SOAP_1_2,
-    'login' => 'fubguest',
-    'password' => 'energieGuest1'
+    'login' => 'FUBEnergie',
+    'password' => 'energieFUB1'
 ));
 
 // Print results.

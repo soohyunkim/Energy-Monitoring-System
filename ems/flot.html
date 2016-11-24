@@ -8,10 +8,10 @@ Modified and developed HTML5, CSS, and javascript to display real time data of "
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>ELT Mittelspannung Dahlem gesamt</title>
-    <link href="examples.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="examples.css" rel="stylesheet" type="text/css">
     <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot/excanvas.min.js"></script><![endif]-->
     <script language="javascript" type="text/javascript" src="js/flot/jquery.js"></script>
     <script language="javascript" type="text/javascript" src="js/flot/jquery.flot.js"></script>
@@ -87,7 +87,7 @@ Modified and developed HTML5, CSS, and javascript to display real time data of "
             ],
             yaxes: [
               {
-                axisLabel: "Electic Power [mW]",
+                axisLabel: "Electic Power [MW]",
                 axisLabelUseCanvas: true,
                 axisLabelFontSizePixels: 12,
                 axisLabelFontFamily: 'Verdana, Arial',
@@ -141,13 +141,12 @@ Modified and developed HTML5, CSS, and javascript to display real time data of "
 
       <div class="container">
         <p>Click
-          <!-- <button id=#ELTdata> -->
-          <button type="button" id=#ELTdata class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
-            >> Here</button>
+          <button type="button" class="btn btn-primary">
+             Here</button>
           to see data</p>
 
         <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog">
+        <!-- <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog modal-sm">
             <div class="modal-content">
               <div class="modal-header">
@@ -163,7 +162,7 @@ Modified and developed HTML5, CSS, and javascript to display real time data of "
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
 
     </div>
