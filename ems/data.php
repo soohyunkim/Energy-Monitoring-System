@@ -6,7 +6,7 @@ $aoRequest = array();
 ini_set("soap.wsdl_cache_enabled", 0);
 
 $dtTimeRequestUpp 	= time();
-$dtTimeRequestLow 	= strtotime('-2 month', $dtTimeRequestUpp );
+$dtTimeRequestLow 	= strtotime('-3 month', $dtTimeRequestUpp );
 $node				= (isset($_GET['node']))?$_GET['node']:0;
 $unit				= (isset($_GET['unit']))?$_GET['unit']:0;
 

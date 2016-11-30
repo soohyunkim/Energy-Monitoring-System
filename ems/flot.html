@@ -8,53 +8,52 @@ Modified and developed HTML5, CSS, and javascript to display real time data of "
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>ELT Mittelspannung Dahlem gesamt</title>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="examples.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="examples.css" rel="stylesheet" type="text/css">
-    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot/excanvas.min.js"></script><![endif]-->
-    <script language="javascript" type="text/javascript" src="js/flot/jquery.js"></script>
-    <script language="javascript" type="text/javascript" src="js/flot/jquery.flot.js"></script>
-    <script language="javascript" type="text/javascript" src="js/flot/jquery.flot.time.js"></script>
-    <script language="javascript" type="text/javascript" src="js/flot/jquery.flot.symbol.js"></script>
-    <script language="javascript" type="text/javascript" src="js/flot/jquery.flot.axislabels.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/flot/jquery.js"></script>
+    <script src="js/flot/jquery.flot.js"></script>
+    <script src="js/flot/jquery.flot.time.js"></script>
+    <script src="js/flot/jquery.flot.symbol.js"></script>
+    <script src="js/flot/jquery.flot.axislabels.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.js"></script>
+
+  </head>
+  <body>
 
     <script type="text/javascript">
+    var node = "39675"; //default
+    // var garystr21 = ["95481", "109106"]; // electricity, heating
+    // for (index = 0; index < garystr21.length; ++index) {
+    //   console.log(garystr21[index]);
+    // }
 
-      var node = "39675"; //default
-      var garystr21 = ["95481", "109106"]; // electricity, heating
+    $(function() {
 
-      for (index = 0; index < garystr21.length; ++index) {
-        console.log(garystr21[index]);
-      }
+          // for (index = 0; index < garystr21.length; ++index) { 	node = garystr21[index]; }
+          var datapage = "http://userpage.fu-berlin.de/uas/ems/data.php?node=" + node + "&unit=0";
+          var a = [];
+          var data39675;
 
-      $(function () {
+          $.getJSON(datapage, function(data) {
 
-        // for (index = 0; index < garystr21.length; ++index) { 	node = garystr21[index]; }
-        var datapage = "http://userpage.fu-berlin.de/uas/ems/data.php?node=" + node + "&unit=0";
-        var a = [];
-        var data39675;
+            console.log(data);
 
-        $.getJSON(datapage, function (data) {
+            for (i = 0; i < data.Datapoint.length; i++) {
+              // console.log("Item: " + i + ", Timestamp: " + data.Datapoint[i].Timestamp + ", Value: " + data.Datapoint[i].Value); console.log("[" + data.Datapoint[i].Timestamp + "," + data.Datapoint[i].Value + "]");
+              a.push(data.Datapoint[i].Timestamp * 1000, data.Datapoint[i].Value / 1000000);
+              // console.log(a[i]);
+            }
 
-          console.log(data);
+            data39675 = _.chunk(a, 2)
+            console.log(data39675);
 
-          for (i = 0; i < data.Datapoint.length; i++) {
-            // console.log("Item: " + i + ", Timestamp: " + data.Datapoint[i].Timestamp + ", Value: " + data.Datapoint[i].Value); console.log("[" + data.Datapoint[i].Timestamp + "," + data.Datapoint[i].Value + "]");
-            a.push(data.Datapoint[i].Timestamp * 1000, data.Datapoint[i].Value / 1000000);
-            // console.log(a[i]);
-          }
+          });
 
-          data39675 = _.chunk(a, 2)
-          console.log(data39675);
+          function doPlot(position) {
 
-        });
-
-        function doPlot(position) {
-
-          var data1 = [
-            {
+            var data1 = [{
               data: data39675,
               label: "ELT Mittelspannung Dahlem gesamt",
               color: "#CC0000",
@@ -67,12 +66,10 @@ Modified and developed HTML5, CSS, and javascript to display real time data of "
                 fill: true,
                 fillColor: 'rgba(204,0,0,0.4)'
               }
-            }
-          ];
+            }];
 
-          $.plot("#placeholder", data1, {
-            xaxes: [
-              {
+            $.plot("#placeholder", data1, {
+              xaxes: [{
                 mode: "time",
                 timeformat: "%m/%d",
                 tickSize: [
@@ -83,52 +80,45 @@ Modified and developed HTML5, CSS, and javascript to display real time data of "
                 axisLabelFontSizePixels: 12,
                 axisLabelFontFamily: 'Verdana, Arial',
                 axisLabelPadding: 10
-              }
-            ],
-            yaxes: [
-              {
+              }],
+              yaxes: [{
                 axisLabel: "Electic Power [MW]",
                 axisLabelUseCanvas: true,
                 axisLabelFontSizePixels: 12,
                 axisLabelFontFamily: 'Verdana, Arial',
                 axisLabelPadding: 5,
                 min: 0
-              }
-            ],
-            legend: {
-              position: "sw"
-            },
-            series: {
-              lines: {
-                show: true
+              }],
+              legend: {
+                position: "sw"
               },
-              points: {
-                radius: 1,
-                show: true,
-                fill: false
+              series: {
+                lines: {
+                  show: true
+                },
+                points: {
+                  radius: 1,
+                  show: true,
+                  fill: false
+                }
+              },
+              grid: {
+                clickable: true,
+                hoverable: true,
+                borderWidth: 3,
+                mouseActiveRadius: 50,
+                axisMargin: 20
               }
-            },
-            grid: {
-              clickable: true,
-              hoverable: true,
-              borderWidth: 3,
-              mouseActiveRadius: 50,
-              // backgroundColor: {   colors: ["#ffffff", "#EDF5FF"] },
-              axisMargin: 20
-            }
+            });
+
+          }
+
+          $("button").click(function() {
+            // $('#myModal').modal('show');
+            doPlot($(this).text());
           });
-
-        }
-
-        $("button").click(function () {
-
-          doPlot($(this).text());
-        });
-
       });
     </script>
-  </head>
-  <body>
 
     <div id="header">
       <h2>ELT Mittelspannung Dahlem gesamt</h2>
@@ -146,7 +136,7 @@ Modified and developed HTML5, CSS, and javascript to display real time data of "
           to see data</p>
 
         <!-- Modal -->
-        <!-- <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog modal-sm">
             <div class="modal-content">
               <div class="modal-header">
@@ -162,7 +152,7 @@ Modified and developed HTML5, CSS, and javascript to display real time data of "
               </div>
             </div>
           </div>
-        </div> -->
+        </div>
       </div>
 
     </div>
