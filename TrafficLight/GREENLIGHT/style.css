@@ -1,0 +1,150 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+.trafficlight1{
+  background: #222;
+  background-image: linear-gradient(transparent 2%, #111 2%, transparent 3%, #111 30%);
+  width: 100px;
+  height: 310px;
+  border-radius: 10px;
+  position: absolute;
+  border: solid 5px #333;
+  margin-top: 30px;
+  float: left;
+  margin-left: 30px;
+}
+
+.red{
+  background: red;
+  background-image: radial-gradient(brown, transparent);
+  background-size: 5px 5px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  border: dotted 2px red;
+  box-shadow:
+    0 0 10px #111 inset,
+    0 0 10px red;
+  animation: 5s red infinite;
+}
+
+.yellow{
+  background: yellow;
+  background-image: radial-gradient(orange, transparent);
+  background-size: 5px 5px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  top: 110px;
+  left: 5px;
+  border: dotted 2px yellow;
+  box-shadow:
+    0 0 10px #111 inset,
+    0 0 10px orange;
+  animation: 5s yellow infinite;
+}
+
+.green{
+  background: green;
+  background-image: radial-gradient(lime, transparent);
+  background-size: 5px 5px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  top: 210px;
+  left: 5px;
+  border: dotted 2px green;
+  box-shadow:
+    0 0 10px #111 inset,
+    0 0 10px lime;
+  /*animation: 5s green infinite;*/
+}
+
+.box {
+  background: white;
+  height: 25%;
+  width: 300px;
+  border-radius: 10px;
+  position: absolute;
+  border: solid 5px #333;
+  margin-left: 120px;
+  float: left;
+  top: 14px;
+  text-align:center;
+}
+
+.box.redbox {
+  background: rgba(255,0,0,0.2);
+  top: 3%;
+}
+
+.box.yellowbox {
+  background: rgba(255,255,0, 0.2);
+  top: 37.5%;
+}
+
+.box.greenbox {
+  background: rgba(0,128,0,0.2);
+  top: 70%;
+}
+
+.main-content{
+max-width: 100%;
+height: auto;
+background: white;
+-moz-transform: scale(0.65, 0.65);
+-webkit-transform: scale(0.65, 0.65);
+-o-transform: scale(0.65, 0.65);
+-ms-transform: scale(0.65, 0.65);
+transform: scale(0.65, 0.65);
+-moz-transform-origin: top left;
+-webkit-transform-origin: top left;
+-o-transform-origin: top left;
+-ms-transform-origin: top left;
+transform-origin: top left;
+}
+
+.twolights {
+  -moz-transform: scale(0.65, 0.65);
+  -webkit-transform: scale(0.65, 0.65);
+  -o-transform: scale(0.65, 0.65);
+  -ms-transform: scale(0.65, 0.65);
+  transform: scale(0.65, 0.65);
+  -moz-transform-origin: top left;
+  -webkit-transform-origin: top left;
+  -o-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+}
+
+
+@keyframes red{
+  0%{opacity: 1}
+  20%{opacity: 1}
+  40%{opacity: 1}
+  60%{opacity: .1}
+  80%{opacity: .1}
+  100%{opacity: .1}
+}
+
+@keyframes yellow{
+  0%{opacity: 1}
+  20%{opacity: 1}
+  40%{opacity: 1}
+  60%{opacity: .1}
+  80%{opacity: .1}
+  100%{opacity: .1}
+}
+
+@keyframes green{
+  0%{opacity: 1}
+  20%{opacity: 1}
+  40%{opacity: 1}
+  60%{opacity: .1}
+  80%{opacity: .1}
+  100%{opacity:.1}
+}
