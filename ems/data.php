@@ -32,7 +32,7 @@ function getDataEachHour($node, $unit, $dtTimeRequestLow, $dtTimeRequestUpp) {
   for($i=0;$i<count($times);$i++) {
 
 	$oRequest[$i]->NodeIdentifier = $node;
-    	$oRequest[$i]->UnitIdentifier = $unit;
+  $oRequest[$i]->UnitIdentifier = $unit;
 	$oRequest[$i]->Timestamp = $times[$i];
 	$oRequest[$i]->DateCheck = date('l jS \of F Y h:i:s A', $times[$i]);
   }

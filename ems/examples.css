@@ -110,31 +110,6 @@ input[type=checkbox] {
 	line-height: 1.2em;
 }
 
-/*.legend table {
-	border-spacing: 5px;
-}
-
-
-.modal-content {
-	padding: 15px 15px 15px 15px;
-	border: 1px solid #ddd;
-	width: 850px;
-	height: 260px;
-	position: absolute;
-	margin: 0% -92% auto;
-}
-
-.modal-footer {
-	padding: 30px 15px;
-}
-
-#myModal {
-	width: 850px;
-	height: 350px;
-	position: absolute;
-	margin: 15px auto 30px auto;
-}*/
-
 .container {
 	width: 850px;
 	height: 75px;
